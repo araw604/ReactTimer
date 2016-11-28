@@ -1,22 +1,22 @@
 var webpackConfig = require('./webpack.config.js');
 
-module.exports = function(config){
+module.exports = function (config) {
   config.set({
-    browser: ['Chrome'],
+    browsers: ['Chrome'],
     singleRun: true,
-    frameworks:['mocha'],
-    files:['app/tests/**/*.test.jsx'],
+    frameworks: ['mocha'],
+    files: ['app/tests/**/*.test.jsx'],
     preprocessors: {
-      'app/tests/**/*.test.jsx': ['webpack','sourcemap']
+      'app/tests/**/*.test.jsx': ['webpack', 'sourcemap']
     },
-    reporters:['mocha'],
-    client:{
-      mocha:{
+    reporters: ['mocha'],
+    client: {
+      mocha: {
         timeout: '5000'
       }
     },
     webpack: webpackConfig,
-    webpackServer:{
+    webpackServer: {
       noInfo: true
     }
   });
